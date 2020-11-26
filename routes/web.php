@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('index');
+    //return view('welcome');
 });
+
+Route::get('/index', 'ImageController@index');
+
+Route::get('/upload', function () {
+    return view('images.upload');
+});
+Route::post('/upload', 'ImageController@store');
+
+Route::get('/image/{id}', 'ImageController@show');
