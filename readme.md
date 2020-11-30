@@ -33,7 +33,7 @@
 
 - vagrant up
 
-After machine is done building, you can visit "http://medicdigital.test/" in your web browser to view the running application.
+After machine is done building, you can visit "http://medicdigital.test/" in your web browser to view the running application. If you run into errors regarding the s3 keys not validating, you may need to generate new IAM user keys. (I had to generate a new key putting this on a separate machine.)
 
 
 ## For MacOS (Catalina 10.15.7)
@@ -71,7 +71,7 @@ After machine is done building, you can visit "http://medicdigital.test/" in you
 
 - vagrant up
 
-After machine is done building, you can visit "http://medicdigital.test/" in your web browser to view the running application.
+After machine is done building, you can visit "http://medicdigital.test/" in your web browser to view the running application. If you run into errors regarding the s3 keys not validating, you may need to generate new IAM user keys. (I had to generate a new key putting this on a separate machine.)
 
 
 ### Unit testing
