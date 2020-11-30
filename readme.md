@@ -20,7 +20,7 @@
 
 - cp .env.example .env
 
-- edit Homestead.yaml file @ "folders:map" to point to correct local path of host machine (/home/<User>/code/LaravelSandbox)
+- edit Homestead.yaml file @ "folders:map" to point to correct local path of host machine (/home/YourUsernameHere/code/LaravelSandbox)
 
 - edit /ect/hosts file to point medicdigital.test to 192.168.10.10 (unless updated in .yaml file)
 
@@ -58,7 +58,7 @@ After machine is done building, you can visit "http://medicdigital.test/" in you
 
 - cp .env.example .env
 
-- edit Homestead.yaml file @ "folders:map" to point to correct local path of host machine (/Users/<User>/code/LaravelSandbox)
+- edit Homestead.yaml file @ "folders:map" to point to correct local path of host machine (/Users/YourUsernameHere/code/LaravelSandbox)
 
 - edit /ect/hosts file to point medicdigital.test to 192.168.10.10 (unless updated in .yaml file)
 
