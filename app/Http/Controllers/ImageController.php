@@ -17,7 +17,7 @@ class ImageController extends Controller
     public function index()
     {
       $baseURL = Images::getURLbase();
-      $images = Images::getAllImgs();
+      $images = Images::all();
       if (count($images) != 0) {
         return view('images.index', ["images"=>$images, "baseURL"=>$baseURL]);
       } else {
@@ -25,15 +25,6 @@ class ImageController extends Controller
       }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -57,6 +48,7 @@ class ImageController extends Controller
       }
     }
 
+
     /**
      * Display the specified resource.
      *
@@ -70,28 +62,6 @@ class ImageController extends Controller
       return view('images.view', ["image"=>$image, "baseURL"=>$baseURL]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Images  $images
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Images $images)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Images  $images
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Images $images)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -99,8 +69,14 @@ class ImageController extends Controller
      * @param  \App\Images  $images
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Images $images)
+    public function destroy(Images $images, $id)
     {
-        //
+      $deletedFile = Images::deleteImg($id);
+      if ($deletedFile) {
+        return Redirect::to("index")
+        ->withSuccess('The image was successfully deleted and removed from s3.');
+      } else {
+        return Redirect::to("index")->with('failed', $deletedFile);
+      }
     }
 }

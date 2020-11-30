@@ -24,3 +24,5 @@ Route::get('/upload', function () {
 Route::post('/upload', 'ImageController@store');
 
 Route::get('/image/{id}', 'ImageController@show');
+
+Route::get('/image/delete/{id}', 'ImageController@destroy');

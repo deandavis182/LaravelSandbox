@@ -31,6 +31,7 @@
   <body>
     <a href="/index"><button style="font-size: larger;" type="button" name="button">Back to Index</button></a>
     @if ($image ?? '')
+    <a href="/image/delete/{{$image->id}}"><button style="font-size: larger;margin-left: 2em;" type="button" name="button">Delete Image</button></a>
     <div class="container">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->

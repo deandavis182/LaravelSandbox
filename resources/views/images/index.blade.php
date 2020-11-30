@@ -15,6 +15,24 @@
     </style>
   </head>
   <body>
+
+    @if ($message = Session::get('success'))
+
+    <div id="successMessage" class="alert alert-success alert-block">
+        <strong>{{ $message }}</strong>
+        <button type="button" onclick="hideSuccessMessage()" class="close" data-dismiss="alert">×</button>
+    </div>
+    <br>
+    @endif
+    @if ($message = Session::get('failed'))
+
+    <div id="failedMessage" class="alert alert-success alert-block">
+        <strong style="color:red">{{ $message }}</strong>
+        <button type="button" onclick="hideFailedMessage()" class="close" data-dismiss="alert">×</button>
+    </div>
+    <br>
+    @endif
+
     @if ($images ?? '')
       <p> We have {{ count($images ?? '') }} Images!</p>
       <p>(Click an image to see the generated versions of each image.)</p>
@@ -34,5 +52,14 @@
     @else
       <p>There are no images uploaded yet! </p> <a href="/upload"><button style="font-size: larger;" type="button" name="button">Upload Images</button></a>
     @endif
+
+    <script type="text/javascript">
+      function hideSuccessMessage() {
+        document.getElementById("successMessage").style.display = 'none';
+      }
+      function hideFailedMessage() {
+        document.getElementById("failedMessage").style.display = 'none';
+      }
+    </script>
   </body>
 </html>
