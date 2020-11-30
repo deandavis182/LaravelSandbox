@@ -24,7 +24,7 @@
 
 - edit /ect/hosts file to point medicdigital.test to 192.168.10.10 (unless updated in .yaml file)
 
-- set up Amazon s3 bucket and create a bucket policy to allow retrieving objects from anywhere (So we can view the files from web browser)
+- set up an Amazon IAM user w/ access key credentials, set up an s3 bucket and create a bucket policy to allow retrieving objects from anywhere (So we can view the files from web browser)
 
 - update .env AWS credentials to match the s3 bucket & update DB credentials for homestead DB
 ( Default homestead credentials should be: DB_DATABASE=homestead, DB_USERNAME=homestead, DB_PASSWORD=secret )
@@ -62,7 +62,7 @@ After machine is done building, you can visit "http://medicdigital.test/" in you
 
 - edit /ect/hosts file to point medicdigital.test to 192.168.10.10 (unless updated in .yaml file)
 
-- set up Amazon s3 bucket and create a bucket policy to allow retrieving objects from anywhere (So we can view the files from web browser)
+- set up an Amazon IAM user w/ access key credentials, set up an s3 bucket and create a bucket policy to allow retrieving objects from anywhere (So we can view the files from web browser)
 
 - update .env AWS credentials to match the s3 bucket & update DB credentials for homestead DB
 ( Default homestead credentials should be: DB_DATABASE=homestead, DB_USERNAME=homestead, DB_PASSWORD=secret )
@@ -82,6 +82,8 @@ To run unit tests for this application, the vagrant machine must be up and runni
 - run "cd code" to get into the directory where Laravel is installed.
 - now you can run the command "phpunit" to run unit tests and ensure everything works as expected before deploying.
 
+
+#
 
 # Victory Laravel Sandbox Application
 
