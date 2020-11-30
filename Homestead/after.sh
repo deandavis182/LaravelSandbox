@@ -29,9 +29,7 @@
 # Composer Update
 
 cd code
-composer install 2>&1
-sudo composer self-update 2>&1
+COMPOSER_MEMORY_LIMIT=-1 composer install 2>&1
+sudo COMPOSER_MEMORY_LIMIT=-1 composer self-update 2>&1
+php artisan config:cache
 php artisan migrate 2>&1
-npm install 2>&1
-npm run dev 2>&1
-
