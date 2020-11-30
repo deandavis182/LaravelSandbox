@@ -31,5 +31,6 @@
 cd code
 COMPOSER_MEMORY_LIMIT=-1 composer install 2>&1
 sudo COMPOSER_MEMORY_LIMIT=-1 composer self-update 2>&1
+php artisan key:generate
 php artisan config:cache
 php artisan migrate 2>&1
